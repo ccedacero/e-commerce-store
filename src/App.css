@@ -2,6 +2,29 @@
   text-align: center;
 }
 
+.MuiCard-root {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.MuiListItem-container {
+  list-style-type: none;
+}
+
+.MuiGrid-container {
+  justify-content: center;
+}
+
+.MuiListItem-root {
+  margin-right: 20rem;
+}
+
+.MuiSvgIcon-root {
+  color: #0046be;
+}
+.MuiTypography-root {
+  color: #000;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
