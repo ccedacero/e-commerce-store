@@ -54,40 +54,38 @@ function Item({ data, addToCart }) {
     return (
         <>
             {data ? (
-                < main >
-                    <Container className={classes.cardGrid} maxWidth="md">
-                        <Grid container spacing={3}>
-                            {data.feed.entry.map((product) => (
-                                < Grid item key={product.gsx$name.$t} xs={12} sm={6} md={4} >
-                                    <Card style={{ height: '100%' }} >
-                                        <CardMedia
-                                            className={classes.cardMedia}
-                                            image={product.link[0].href}
-                                            title={product.gsx$name.$t}
-                                        />
-                                        <CardContent className={classes.cardContent}>
-                                            <Typography gutterBottom variant="h6" component="h3">
-                                                {product.gsx$name.$t}
-                                            </Typography>
-                                            <Typography>{product.gsx$description.$t}</Typography>
-                                            <Typography>{'$' + product.gsx$priceincents.$t / 100}</Typography>
-                                        </CardContent>
-                                        <CardActions className={classes.card}>
-                                            <Button
-                                                className={classes.buyBtn}
-                                                style={{ backgroundColor: "#FFE000" }}
-                                                onClick={handleClick}
-                                                data-add={product.gsx$name.$t}
-                                                data-price={product.gsx$priceincents.$t / 100}
-                                                disabled={product.gsx$availability.$t === 'in_stock' ? false : true}
-                                            >{product.gsx$availability.$t === 'in_stock' ? 'Buy' : 'Out of stock'} </Button>
-                                        </CardActions>
-                                    </Card>
-                                </Grid>
-                            ))}
-                        </Grid>
-                    </Container>
-                </main >
+                <Container className={classes.cardGrid} maxWidth="md">
+                    <Grid container spacing={3}>
+                        {data.feed.entry.map((product) => (
+                            < Grid item key={product.gsx$name.$t} xs={12} sm={6} md={4} >
+                                <Card style={{ height: '100%' }} >
+                                    <CardMedia
+                                        className={classes.cardMedia}
+                                        image={product.link[0].href}
+                                        title={product.gsx$name.$t}
+                                    />
+                                    <CardContent className={classes.cardContent}>
+                                        <Typography gutterBottom variant="h6" component="h3">
+                                            {product.gsx$name.$t}
+                                        </Typography>
+                                        <Typography>{product.gsx$description.$t}</Typography>
+                                        <Typography>{'$' + product.gsx$priceincents.$t / 100}</Typography>
+                                    </CardContent>
+                                    <CardActions className={classes.card}>
+                                        <Button
+                                            className={classes.buyBtn}
+                                            style={{ backgroundColor: "#FFE000" }}
+                                            onClick={handleClick}
+                                            data-add={product.gsx$name.$t}
+                                            data-price={product.gsx$priceincents.$t / 100}
+                                            disabled={product.gsx$availability.$t === 'in_stock' ? false : true}
+                                        >{product.gsx$availability.$t === 'in_stock' ? 'Buy' : 'Out of stock'} </Button>
+                                    </CardActions>
+                                </Card>
+                            </Grid>
+                        ))}
+                    </Grid>
+                </Container>
             ) : null
             }
         </>
